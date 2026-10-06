@@ -115,12 +115,12 @@ const services = [
 
 const reveal = {
   hidden: { opacity: 0, y: 45 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
 const wordReveal = {
   hidden: { y: "110%", opacity: 0 },
-  show: { y: "0%", opacity: 1, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] } },
+  show: { y: "0%", opacity: 1, transition: { duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] } },
 };
 
 function ThemeIcon({ dark }: { dark: boolean }) {
@@ -201,7 +201,7 @@ export default function Home() {
             <div className="eyebrow mb-5 text-white/60">Crafting objects with character</div>
             <h1 className="display text-[17vw] leading-[0.77] tracking-[-0.08em] md:text-[11vw]">
               <span className="reveal-line"><motion.span variants={wordReveal} initial="hidden" animate="show">WE CRAFT</motion.span></span>
-              <span className="reveal-line"><motion.span variants={wordReveal} initial="hidden" animate="show" transition={{ delay: 0.12, duration: 0.9, ease: [0.22, 1, 0.36, 1] }}>STORIES.</motion.span></span>
+              <span className="reveal-line"><motion.span variants={wordReveal} initial="hidden" animate="show" transition={{ delay: 0.12, duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}>STORIES.</motion.span></span>
             </h1>
           </div>
           <div className="mt-9 grid gap-7 md:grid-cols-[1fr_auto] md:items-end">
@@ -242,7 +242,7 @@ export default function Home() {
 
             <div className="project-preview sticky top-24 hidden min-h-[44rem] overflow-hidden lg:block">
               <AnimatePresence mode="wait">
-                <motion.div key={hoveredWork} initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }} className="absolute inset-0">
+                <motion.div key={hoveredWork} initial={{ opacity: 0, scale: 1.04 }} animate={{ opacity: 1, scale: 1 }} exit={{ opacity: 0, scale: 0.98 }} transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }} className="absolute inset-0">
                   <Image src={workGroups[hoveredWork].leadImage} alt={hoveredWork} fill className="object-cover" sizes="45vw" />
                   <div className="absolute inset-x-0 bottom-0 flex items-end justify-between bg-gradient-to-t from-black/65 to-transparent p-7 pt-28 text-white">
                     <div><div className="eyebrow text-white/65">{workGroups[hoveredWork].category}</div><div className="display mt-2 text-5xl">{hoveredWork}</div></div>
@@ -282,7 +282,7 @@ export default function Home() {
       <AnimatePresence>
         {menuOpen && (
           <motion.div className="menu-overlay fixed inset-0 z-50" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.25 }}>
-            <motion.div className="menu-panel absolute inset-0" initial={{ y: "-100%" }} animate={{ y: 0 }} exit={{ y: "-100%" }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}>
+            <motion.div className="menu-panel absolute inset-0" initial={{ y: "-100%" }} animate={{ y: 0 }} exit={{ y: "-100%" }} transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}>
               <div className="mx-auto flex h-full max-w-[1600px] flex-col px-6 py-6 md:px-10">
                 <div className="flex items-center justify-between"><span className="display text-2xl tracking-[-0.055em] md:text-3xl">SENITUKANG<span className="ml-1 align-top text-[9px]">®</span></span><div className="flex items-center gap-3"><button onClick={toggleTheme} className="theme-toggle icon-control" data-cursor><ThemeIcon dark={dark} /><span className="sr-only">Toggle theme</span></button><button onClick={() => setMenuOpen(false)} aria-label="Close navigation" className="close-trigger icon-control" data-cursor>×</button></div></div>
                 <div className="menu-content flex-1 py-16 md:py-20">

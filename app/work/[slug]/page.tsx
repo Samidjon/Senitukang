@@ -142,11 +142,11 @@ export default function WorkCollectionPage() {
 
       <section className="work-detail-hero px-6 py-8 md:px-10 md:py-10">
         <div className="mx-auto grid min-h-[78vh] max-w-[1600px] gap-10 lg:grid-cols-[0.42fr_1fr]">
-          <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }} className="flex flex-col justify-between py-4 lg:py-8">
+          <motion.div initial={{ opacity: 0, y: 35 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }} className="flex flex-col justify-between py-4 lg:py-8">
             <div><div className="eyebrow opacity-45">Selected work / {collection.number}</div><h1 className="display mt-6 text-[18vw] leading-[0.75] tracking-[-0.08em] md:text-[10vw]">{collection.title}</h1><p className="mt-8 max-w-md text-sm leading-7 opacity-65">{collection.description}</p><div className="mt-8 text-[10px] uppercase tracking-[0.2em] opacity-45">{collection.eyebrow}</div></div>
             <Link href="#collection" className="mt-12 inline-flex w-fit items-center gap-4 text-[10px] uppercase tracking-[0.2em]" data-cursor>Explore collection <span className="grid h-12 w-12 place-items-center rounded-full border border-current/30">↓</span></Link>
           </motion.div>
-          <motion.div initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }} className="relative min-h-[58vh] overflow-hidden bg-[var(--soft)]">
+          <motion.div initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }} className="relative min-h-[58vh] overflow-hidden bg-[var(--soft)]">
             <Image src={collection.hero} alt={`${collection.title} collection`} fill priority className="object-cover" sizes="(min-width: 1024px) 65vw, 100vw" />
             <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/65 via-black/10 to-transparent p-7 pt-28 text-white"><div className="eyebrow text-white/65">{collection.eyebrow}</div><div className="display mt-2 text-5xl md:text-7xl">{collection.title}</div></div>
           </motion.div>

@@ -43,7 +43,7 @@ const reveal = {
   show: {
     opacity: 1,
     y: 0,
-    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
+    transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
   },
 };
 
@@ -102,7 +102,7 @@ export default function ProductsPage() {
                 A curated collection of personalised wood and acrylic pieces, from corporate gifts and wedding details to everyday objects. Ready-made pieces live here; custom commissions start with a quote.
               </p>
             </motion.div>
-            <motion.div initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] }} className="relative min-h-[58vh] overflow-hidden bg-[var(--soft)]">
+            <motion.div initial={{ opacity: 0, scale: 1.03 }} animate={{ opacity: 1, scale: 1 }} transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }} className="relative min-h-[58vh] overflow-hidden bg-[var(--soft)]">
               <Image src="/images/lifestyle-feature.jpg" alt="Personalised wood and acrylic collection" fill priority className="object-cover" sizes="(min-width: 1024px) 60vw, 100vw" />
               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent p-7 pt-28 text-white"><div className="eyebrow text-white/65">Wood · acrylic · personalised</div><div className="display mt-2 text-5xl md:text-7xl">Made to keep.</div></div>
             </motion.div>
