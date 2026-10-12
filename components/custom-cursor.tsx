@@ -4,8 +4,8 @@ import { motion, useMotionValue } from "motion/react";
 import { useEffect, useState } from "react";
 
 export default function CustomCursor() {
-  const x = useMotionValue(-1000);
-  const y = useMotionValue(-1000);
+  const x = useMotionValue(-100);
+  const y = useMotionValue(-100);
   const [enabled, setEnabled] = useState(false);
   const [hovering, setHovering] = useState(false);
 

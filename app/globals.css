@@ -568,3 +568,59 @@ html[data-theme="dark"] .icon-control {
   background: rgba(255,255,255,.07) !important;
   border-color: rgba(255,255,255,.38) !important;
 }
+
+.language-switcher {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.12rem;
+  border: 1px solid currentColor;
+  border-radius: 999px;
+  padding: 0.18rem 0.25rem;
+  color: inherit;
+  font-size: 9px;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  white-space: nowrap;
+  backdrop-filter: blur(12px);
+}
+
+.language-option {
+  min-width: 2rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.48rem 0.42rem;
+  background: transparent;
+  color: inherit;
+  opacity: 0.55;
+  cursor: pointer;
+  transition: opacity 0.25s ease, background 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.language-option:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.language-option.is-active {
+  opacity: 1;
+  font-weight: 700;
+  background: currentColor;
+  color: var(--paper);
+}
+
+.language-divider {
+  opacity: 0.35;
+  user-select: none;
+}
+
+@media (max-width: 420px) {
+  .language-switcher {
+    font-size: 8px;
+    padding: 0.12rem 0.18rem;
+  }
+  .language-option {
+    min-width: 1.75rem;
+    padding: 0.42rem 0.3rem;
+  }
+}

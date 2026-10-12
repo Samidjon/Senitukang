@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import CustomCursor from "../components/custom-cursor";
+import { LanguageProvider } from "../components/language-provider";
 
 export const metadata: Metadata = {
   title: "Senitukang — Crafted for your moments",
@@ -9,11 +10,13 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="ms" suppressHydrationWarning>
       <body>
-        <div className="noise" aria-hidden="true" />
-        <CustomCursor />
-        {children}
+        <LanguageProvider>
+          <div className="noise" aria-hidden="true" />
+          <CustomCursor />
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

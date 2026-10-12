@@ -1,6 +1,9 @@
-@"
 node_modules/
 .next/
+out/
 .env
 .env.local
-"@ | Out-File -Encoding utf8 .gitignore
+.env.*.local
+*.log
+*.tsbuildinfo
+.DS_Store
