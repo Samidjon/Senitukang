@@ -5,6 +5,7 @@ import Link from "next/link";
 import { AnimatePresence, motion, type Variants } from "motion/react";
 import { useEffect, useState } from "react";
 import { LanguageSwitcher, useLanguage } from "../components/language-provider";
+import { SocialLinks } from "../components/social-links";
 import { uiText } from "../lib/i18n";
 
 type MenuKey = "Pages" | "Products" | "Services" | "Shop";
@@ -289,10 +290,40 @@ export default function Home() {
       </section>
 
       <section id="contact" className="contact-section px-6 py-24 md:px-10 md:py-40">
-        <div className="mx-auto max-w-[1600px]"><div className="eyebrow opacity-55">{t.home.startProject}</div><motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="display mt-7 max-w-6xl text-[16vw] leading-[0.78] md:text-[9.5vw]" dangerouslySetInnerHTML={{ __html: t.home.contactTitle }} /><div className="mt-12 flex flex-col gap-8 border-t pt-8 md:flex-row md:items-end md:justify-between"><p className="max-w-md text-sm leading-7 opacity-60">{t.home.contactCopy}</p><a href="https://wa.me/60000000000" className="inline-flex items-center gap-5 text-[10px] uppercase tracking-[0.22em]" data-cursor>{t.home.quote}<span className="grid h-14 w-14 place-items-center rounded-full border border-current/40 text-lg transition duration-500 hover:-rotate-45">↗</span></a></div></div>
+        <div className="mx-auto max-w-[1600px]">
+          <div className="eyebrow opacity-55">{t.home.startProject}</div>
+          <motion.h2 variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="display mt-7 max-w-6xl text-[16vw] leading-[0.78] md:text-[9.5vw]" dangerouslySetInnerHTML={{ __html: t.home.contactTitle }} />
+          <div className="mt-12 flex flex-col gap-8 border-t pt-8 md:flex-row md:items-end md:justify-between">
+            <p className="max-w-md text-sm leading-7 opacity-60">{t.home.contactCopy}</p>
+            <a href="https://wa.me/601156567811" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-5 text-[10px] uppercase tracking-[0.22em]" data-cursor>
+              {t.home.quote}<span className="grid h-14 w-14 place-items-center rounded-full border border-current/40 text-lg transition duration-500 hover:-rotate-45">↗</span>
+            </a>
+          </div>
+
+          <div className="mt-16 grid gap-8 border-t border-[var(--line)] pt-8 md:grid-cols-2 xl:grid-cols-4 md:gap-10">
+            <div>
+              <div className="eyebrow mb-4 opacity-45">{language === "ms" ? "Telefon / WhatsApp" : "Phone / WhatsApp"}</div>
+              <a href="tel:+601156567811" className="display text-2xl transition-opacity hover:opacity-60 md:text-3xl">011 5656 7811</a>
+              <div className="mt-3"><a href="https://wa.me/601156567811" target="_blank" rel="noopener noreferrer" className="text-xs underline underline-offset-4 opacity-60 hover:opacity-100">WhatsApp ↗</a></div>
+            </div>
+            <div>
+              <div className="eyebrow mb-4 opacity-45">{language === "ms" ? "E-mel" : "Email"}</div>
+              <a href="mailto:senitukang.product@gmail.com" className="break-words text-sm transition-opacity hover:opacity-60">senitukang.product@gmail.com</a>
+            </div>
+            <div>
+              <div className="eyebrow mb-4 opacity-45">{language === "ms" ? "Alamat" : "Address"}</div>
+              <a href="https://www.google.com/maps/search/?api=1&query=140%20%26%20140A%20JALAN%20JASA%205%2C%20TAMAN%20JASA%2C%2068100%20BATU%20CAVES%2C%20SELANGOR" target="_blank" rel="noopener noreferrer" className="block max-w-sm text-sm leading-6 transition-opacity hover:opacity-60">140 & 140A JALAN JASA 5, TAMAN JASA, 68100 BATU CAVES, SELANGOR</a>
+              <a href="https://www.google.com/maps/search/?api=1&query=140%20%26%20140A%20JALAN%20JASA%205%2C%20TAMAN%20JASA%2C%2068100%20BATU%20CAVES%2C%20SELANGOR" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-xs underline underline-offset-4 opacity-60 hover:opacity-100">{language === "ms" ? "Lihat di Google Maps ↗" : "View on Google Maps ↗"}</a>
+            </div>
+            <div>
+              <div className="eyebrow mb-4 opacity-45">{language === "ms" ? "Ikuti kami" : "Follow us"}</div>
+              <SocialLinks className="flex-col items-start gap-4" />
+            </div>
+          </div>
+        </div>
       </section>
 
-      <footer className="footer px-6 py-8 md:px-10"><div className="mx-auto flex max-w-[1600px] flex-col justify-between gap-4 text-[9px] uppercase tracking-[0.18em] opacity-50 md:flex-row"><span>© {new Date().getFullYear()} Senitukang</span><span>{t.home.footerCraft}</span></div></footer>
+      <footer className="footer px-6 py-8 md:px-10"><div className="mx-auto flex max-w-[1600px] flex-col justify-between gap-5 text-[9px] uppercase tracking-[0.18em] opacity-60 md:flex-row md:items-center"><span>© {new Date().getFullYear()} Senitukang</span><span>{t.home.footerCraft}</span><SocialLinks className="!gap-3" /><div className="flex flex-col gap-2 md:items-end"><a href="tel:+601156567811" className="hover:opacity-100">011 5656 7811</a><a href="mailto:senitukang.product@gmail.com" className="normal-case tracking-normal hover:opacity-100">senitukang.product@gmail.com</a></div></div></footer>
 
       <AnimatePresence>
         {menuOpen && (
@@ -314,7 +345,7 @@ export default function Home() {
                     </div>
                     <div className="menu-detail"><div className="eyebrow mb-8 opacity-45">{t.nav.explore} {t.nav[activeMenu]}</div><div className="grid gap-4 sm:grid-cols-2">{localizedMenuGroups[activeMenu].map(([label, href], index) => <motion.a key={label} href={href} onClick={(event) => { if (href.startsWith("#")) { event.preventDefault(); scrollTo(href); } else { setMenuOpen(false); } }} initial={{ opacity: 0, y: 18 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, delay: index * 0.05 }} className="submenu-link group" data-cursor><span>{label}</span><span className="transition-transform duration-300 group-hover:translate-x-1">↗</span></motion.a>)}</div></div>
                   </div>
-                  <div className="mt-20 flex flex-col justify-between gap-8 border-t pt-6 text-[10px] uppercase tracking-[0.18em] opacity-55 md:flex-row"><span>{language === "ms" ? "Malaysia · sejak 2017" : "Malaysia · 2017"} — {new Date().getFullYear()}</span><span>{t.home.menuFooter}</span></div>
+                  <div className="mt-20 flex flex-col justify-between gap-8 border-t pt-6 text-[10px] uppercase tracking-[0.18em] md:flex-row md:items-center"><span className="opacity-55">{language === "ms" ? "Malaysia · sejak 2017" : "Malaysia · 2017"} — {new Date().getFullYear()}</span><div className="flex flex-col gap-3"><span className="opacity-55">{language === "ms" ? "Ikuti kami" : "Follow us"}</span><SocialLinks /></div></div>
                 </div>
               </div>
             </motion.div>

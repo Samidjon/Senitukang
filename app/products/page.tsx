@@ -5,6 +5,7 @@ import Link from "next/link";
 import { motion, type Variants } from "motion/react";
 import { useEffect, useMemo, useState } from "react";
 import { LanguageSwitcher, useLanguage } from "../../components/language-provider";
+import { SocialLinks } from "../../components/social-links";
 import { productTranslations, uiText } from "../../lib/i18n";
 
 const categories = ["All", "Corporate", "Wedding", "Lifestyle", "Islamic", "Projects"] as const;
@@ -163,6 +164,34 @@ export default function ProductsPage() {
             <div><div className="eyebrow opacity-50">{t.products.customOrders}</div><h2 className="display mt-5 max-w-4xl text-[12vw] leading-[0.8] md:text-[8vw]">{t.products.ctaTitle}</h2></div>
             <Link href="/#contact" className="group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.2em]">{t.products.cta}<span className="grid h-14 w-14 place-items-center rounded-full border border-current/35 text-lg transition duration-500 group-hover:-rotate-45">↗</span></Link>
           </motion.section>
+
+          <footer className="mt-20 border-t border-[var(--line)] pt-8 pb-6">
+            <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+              <div>
+                <div className="eyebrow mb-3 opacity-45">{language === "ms" ? "Telefon / WhatsApp" : "Phone / WhatsApp"}</div>
+                <a href="tel:+601156567811" className="display text-2xl transition-opacity hover:opacity-60">011 5656 7811</a>
+                <div className="mt-2"><a href="https://wa.me/601156567811" target="_blank" rel="noopener noreferrer" className="text-xs underline underline-offset-4 opacity-60 hover:opacity-100">WhatsApp ↗</a></div>
+              </div>
+              <div>
+                <div className="eyebrow mb-3 opacity-45">{language === "ms" ? "E-mel" : "Email"}</div>
+                <a href="mailto:senitukang.product@gmail.com" className="break-words text-sm transition-opacity hover:opacity-60">senitukang.product@gmail.com</a>
+              </div>
+              <div>
+                <div className="eyebrow mb-3 opacity-45">{language === "ms" ? "Alamat" : "Address"}</div>
+                <a href="https://www.google.com/maps/search/?api=1&query=140%20%26%20140A%20JALAN%20JASA%205%2C%20TAMAN%20JASA%2C%2068100%20BATU%20CAVES%2C%20SELANGOR" target="_blank" rel="noopener noreferrer" className="block text-sm leading-6 transition-opacity hover:opacity-60">140 & 140A JALAN JASA 5, TAMAN JASA, 68100 BATU CAVES, SELANGOR</a>
+                <a href="https://www.google.com/maps/search/?api=1&query=140%20%26%20140A%20JALAN%20JASA%205%2C%20TAMAN%20JASA%2C%2068100%20BATU%20CAVES%2C%20SELANGOR" target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-xs underline underline-offset-4 opacity-60 hover:opacity-100">{language === "ms" ? "Lihat di Google Maps ↗" : "View on Google Maps ↗"}</a>
+              </div>
+              <div>
+                <div className="eyebrow mb-3 opacity-45">{language === "ms" ? "Ikuti kami" : "Follow us"}</div>
+                <SocialLinks className="flex-col items-start gap-4" />
+              </div>
+            </div>
+            <div className="mt-10 flex flex-col justify-between gap-3 border-t border-[var(--line)] pt-5 text-[9px] uppercase tracking-[0.18em] opacity-45 sm:flex-row">
+              <span>© {new Date().getFullYear()} Senitukang</span>
+              <SocialLinks className="!gap-3" />
+              <Link href="/#top" className="hover:opacity-100">{t.products.home} ↑</Link>
+            </div>
+          </footer>
         </div>
       </section>
     </main>

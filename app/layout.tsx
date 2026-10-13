@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import CustomCursor from "../components/custom-cursor";
 import { LanguageProvider } from "../components/language-provider";
 
 export const metadata: Metadata = {
@@ -14,7 +13,6 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       <body>
         <LanguageProvider>
           <div className="noise" aria-hidden="true" />
-          <CustomCursor />
           {children}
         </LanguageProvider>
       </body>

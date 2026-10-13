@@ -506,44 +506,6 @@ html[data-theme="dark"] .menu-panel {
   transform: scale(1.045);
 }
 
-/* Custom pointer: a tiny editorial dot, no large trailing circle. */
-.custom-cursor,
-.custom-cursor * {
-  cursor: none !important;
-}
-
-.custom-cursor-dot {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 8px;
-  height: 8px;
-  margin-left: -4px;
-  margin-top: -4px;
-  z-index: 9999;
-  pointer-events: none;
-  border-radius: 999px;
-  background: #fff;
-  border: 1px solid rgba(255,255,255,.95);
-  box-shadow: 0 0 0 1px rgba(0,0,0,.18), 0 2px 14px rgba(0,0,0,.22);
-  mix-blend-mode: difference;
-  transition: width .18s ease, height .18s ease, margin .18s ease, transform .18s ease, background .18s ease;
-}
-
-.custom-cursor-dot.is-hovering {
-  width: 12px;
-  height: 12px;
-  margin-left: -6px;
-  margin-top: -6px;
-  transform: scale(1.05);
-}
-
-@media (pointer: coarse) {
-  .custom-cursor-dot {
-    display: none;
-  }
-}
-
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;

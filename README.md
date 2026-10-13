@@ -1,8 +1,4 @@
- HEAD
-# Senitukang — Website
-
 # Senitukang Website
- 9ffec273 (Language update)
 
 A portfolio and product showcase site for Senitukang, a Malaysian custom wood and acrylic craft studio. The visual direction uses an editorial portfolio layout with animated sections, selected-work galleries, product collections, and light/dark themes.
 
@@ -26,8 +22,6 @@ npm install
 npm run dev
 ```
 
- HEAD
-
 Open [http://localhost:3000](http://localhost:3000).
 
 For a production build:
@@ -38,4 +32,3 @@ npm run start
 ```
 
 Product images are kept in `public/images/source/` and `public/images/work/`.
- 9ffec273 (Language update)
