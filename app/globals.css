@@ -685,3 +685,24 @@ html[data-theme="dark"] .language-switcher {
   }
 }
 
+
+
+/* Motion-led workshop storytelling */
+.hero-background-video {
+  z-index: 0;
+  opacity: 0.82;
+  filter: saturate(0.82);
+}
+.hero-overlay { z-index: 1; }
+.hero > div.relative { z-index: 2; }
+.film-card { min-width: 0; }
+.film-card video { display: block; }
+.craft-film { overflow: hidden; }
+.craft-film .film-card h3 { transition: opacity .3s ease, transform .3s ease; }
+.craft-film .film-card:hover h3 { transform: translateX(5px); }
+.craft-film img { display: block; }
+@media (prefers-reduced-motion: reduce) {
+  .hero-background-video, .film-card video { display: none; }
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}

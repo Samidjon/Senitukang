@@ -190,7 +190,10 @@ export default function Home() {
     <main id="top" className="site-shell min-h-screen overflow-x-hidden">
       <header className="site-header fixed inset-x-0 top-0 z-40">
         <div className="mx-auto flex max-w-[1600px] items-center justify-between px-6 py-6 md:px-10">
-          <a href="#top" className="brand-mark display text-2xl tracking-[-0.055em] md:text-3xl" data-cursor> SENITUKANG<span className="ml-1 align-top text-[9px] tracking-normal">®</span></a>
+          <a href="#top" className="brand-mark flex items-center gap-2" data-cursor aria-label="Senitukang home">
+            <span className="grid h-9 w-9 place-items-center overflow-hidden rounded-full bg-white p-1.5 md:h-10 md:w-10"><Image src="/senitukang-symbol.jpg" alt="" width={44} height={44} className="h-full w-full object-contain" /></span>
+            <span className="display text-2xl tracking-[-0.055em] md:text-3xl">SENITUKANG<span className="ml-1 align-top text-[9px] tracking-normal">®</span></span>
+          </a>
           <div className="flex items-center gap-3">
             <LanguageSwitcher />
             <button onClick={toggleTheme} aria-label={dark ? t.nav.themeLight : t.nav.themeDark} className="theme-toggle icon-control" data-cursor>
@@ -208,7 +211,10 @@ export default function Home() {
 
       <section className="hero relative min-h-screen">
         <div className="absolute inset-0">
-          <Image src="/images/source/products/keychain-production.jpeg" alt={language === "ms" ? "Proses ukiran laser pada kayu" : "Laser engraving a wooden keepsake box"} fill priority className="object-cover object-center" sizes="100vw" />
+          <Image src="/media/photo_2026-10-20_08-36-32.jpg" alt={language === "ms" ? "Proses ukiran laser Senitukang" : "Senitukang laser engraving process"} fill priority className="object-cover object-center" sizes="100vw" />
+          <video className="hero-background-video absolute inset-0 h-full w-full object-cover" autoPlay muted loop playsInline poster="/media/photo_2026-10-20_08-36-32.jpg" aria-label="Senitukang workshop process">
+            <source src="/media/workshop-1.mp4" type="video/mp4" />
+          </video>
           <div className="hero-overlay absolute inset-0" />
         </div>
         <div className="relative mx-auto flex min-h-screen max-w-[1600px] flex-col justify-end px-6 pb-8 pt-32 md:px-10 md:pb-10">
@@ -225,6 +231,42 @@ export default function Home() {
             <a href="#work" className="circle-link group inline-flex items-center gap-4 text-[10px] uppercase tracking-[0.22em]" data-cursor>{t.home.exploreWork} <span className="grid h-11 w-11 place-items-center rounded-full border border-white/40 transition duration-500 group-hover:-rotate-45">↘</span></a>
           </div>
           <div className="mt-12 flex items-center justify-between border-t border-white/20 pt-4 text-[9px] uppercase tracking-[0.22em] text-white/50"><span>{t.home.scroll}</span><span className="hidden md:block">{t.home.ideas}</span></div>
+        </div>
+      </section>
+
+      <section className="craft-film dark-section px-6 py-20 md:px-10 md:py-28" aria-label="Inside the Senitukang workshop">
+        <div className="mx-auto max-w-[1600px]">
+          <motion.div variants={reveal} initial="hidden" whileInView="show" viewport={{ once: true, amount: 0.25 }} className="mb-10 flex flex-col justify-between gap-6 md:flex-row md:items-end">
+            <div>
+              <div className="eyebrow text-white/50">MADE WITH INTENTION</div>
+              <h2 className="display mt-4 max-w-4xl text-5xl leading-[0.9] tracking-[-0.06em] md:text-8xl">A closer look<br/>at the craft.</h2>
+            </div>
+            <p className="max-w-sm text-sm leading-7 text-white/60">From the first cut to the finishing details, see how ideas become keepsakes, signage and custom-made objects.</p>
+          </motion.div>
+          <div className="grid gap-4 md:grid-cols-3">
+            {[
+              {src:"/media/workshop-1.mp4", poster:"/media/photo_2026-10-20_08-36-32.jpg", title:"Precision in every cut", no:"01"},
+              {src:"/media/workshop-2.mp4", poster:"/media/photo_2026-10-20_08-36-19.jpg", title:"Details make the difference", no:"02"},
+              {src:"/media/workshop-3.mp4", poster:"/media/photo_2026-10-20_08-36-24.jpg", title:"Made by skilled hands", no:"03"}
+            ].map((film) => <motion.article key={film.no} className="film-card group" whileHover={{ y: -5 }} transition={{ duration: 0.3 }}>
+              <div className="relative aspect-[4/5] overflow-hidden bg-white/10">
+                <video className="h-full w-full object-cover transition duration-700 group-hover:scale-[1.04]" autoPlay muted loop playsInline preload="metadata" poster={film.poster}>
+                  <source src={film.src} type="video/mp4" />
+                </video>
+                <span className="absolute left-4 top-4 text-[10px] tracking-[0.2em] text-white/75">{film.no} / 03</span>
+                <span className="absolute bottom-4 right-4 grid h-10 w-10 place-items-center rounded-full border border-white/60 text-white transition group-hover:rotate-45">↗</span>
+              </div>
+              <h3 className="display mt-4 text-2xl md:text-3xl">{film.title}</h3>
+            </motion.article>)}
+          </div>
+          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
+            {[
+              ["photo_2026-10-20_08-36-09.jpg","Carefully made craftsmanship"],
+              ["photo_2026-10-20_08-36-19.jpg","Attention to small details"],
+              ["photo_2026-10-20_08-36-24.jpg","Every piece has a story"],
+              ["photo_2026-10-20_08-36-28.jpg","Precision and patience"]
+            ].map(([src,alt]) => <div key={src} className="overflow-hidden"><Image src={`/media/${src}`} alt={alt} width={720} height={960} className="aspect-[3/4] w-full object-cover transition duration-700 hover:scale-105" /></div>)}
+          </div>
         </div>
       </section>
 
