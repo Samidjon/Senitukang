@@ -63,8 +63,7 @@ const copy: Record<Language, ChatCopy> = {
       { label: "Cara tempahan", question: "Bagaimana cara membuat tempahan?" },
     ],
     products: "Senitukang menghasilkan produk kayu dan akrilik tersuai — termasuk trofi dan anugerah, plak korporat, hadiah peribadi, kotak, papan tanda, serta koleksi perkahwinan seperti papan alu-aluan dan buku tetamu. Kami juga mempunyai pilihan produk Islamik dan projek tersuai.",
-    address: "Anda boleh menemui Senitukang di:
-140 & 140A, Jalan Jasa 5, Taman Jasa, 68100 Batu Caves, Selangor, Malaysia.",
+    address: "Anda boleh menemui Senitukang di:\n140 & 140A, Jalan Jasa 5, Taman Jasa, 68100 Batu Caves, Selangor, Malaysia.",
     contact: "Anda boleh menghubungi Senitukang melalui telefon / WhatsApp di 011 5656 7811 atau e-mel senitukang.product@gmail.com.",
     order: "Untuk meminta sebut harga, hantarkan mesej WhatsApp dengan jenis produk, kuantiti, tarikh diperlukan dan gambar rujukan jika ada. Pasukan Senitukang boleh membantu mengesahkan pilihan reka bentuk dan sebut harga.",
     fallback: "Saya boleh bantu dengan maklumat produk, alamat, nombor telefon dan cara membuat tempahan. Pilih salah satu topik di bawah atau hubungi kami terus melalui WhatsApp.",
@@ -92,8 +91,7 @@ const copy: Record<Language, ChatCopy> = {
       { label: "How to order", question: "How do I place an order?" },
     ],
     products: "Senitukang creates custom wood and acrylic pieces — including trophies and awards, corporate plaques, personalised gifts, boxes, signage, and wedding items such as welcome boards and guestbooks. Islamic pieces and other custom projects are available too.",
-    address: "You can find Senitukang at:
-140 & 140A, Jalan Jasa 5, Taman Jasa, 68100 Batu Caves, Selangor, Malaysia.",
+    address: "You can find Senitukang at:\n140 & 140A, Jalan Jasa 5, Taman Jasa, 68100 Batu Caves, Selangor, Malaysia.",
     contact: "You can contact Senitukang by phone / WhatsApp at 011 5656 7811 or email senitukang.product@gmail.com.",
     order: "To request a quote, message us on WhatsApp with the product type, quantity, required date, and a reference image if you have one. The Senitukang team can help confirm the design options and quotation.",
     fallback: "I can help with product information, the address, contact details, and how to order. Choose one of the topics below or message us directly on WhatsApp.",
