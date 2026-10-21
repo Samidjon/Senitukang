@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { LanguageProvider } from "../components/language-provider";
+import { ChatWidget } from "../components/chat-widget";
 
 export const metadata: Metadata = {
   title: "Senitukang — Crafted for your moments",
@@ -14,6 +15,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <LanguageProvider>
           <div className="noise" aria-hidden="true" />
           {children}
+          <ChatWidget />
         </LanguageProvider>
       </body>
     </html>
