@@ -1110,11 +1110,7 @@ button {
 
 @media (min-width: 1280px) {
   .craft-film .film-card:nth-child(2) {
-    transform: translateY(2.5rem);
-  }
-
-  .craft-film .film-card:nth-child(2):hover {
-    transform: translateY(2.05rem);
+    margin-top: 2.5rem;
   }
 
   .craft-film .film-card h3 {
@@ -1201,9 +1197,8 @@ button {
     display: none;
   }
 
-  .craft-film .film-card:nth-child(2),
-  .craft-film .film-card:nth-child(2):hover {
-    transform: none;
+  .craft-film .film-card:nth-child(2) {
+    margin-top: 0;
   }
 
   *,
