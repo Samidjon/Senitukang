@@ -259,13 +259,24 @@ export default function Home() {
               <h3 className="display mt-4 text-2xl md:text-3xl">{film.title}</h3>
             </motion.article>)}
           </div>
-          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
+          <div className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-3">
             {[
-              ["photo_2026-10-20_08-36-09.jpg","Carefully made craftsmanship"],
-              ["photo_2026-10-20_08-36-19.jpg","Attention to small details"],
-              ["photo_2026-10-20_08-36-24.jpg","Every piece has a story"],
-              ["photo_2026-10-20_08-36-28.jpg","Precision and patience"]
-            ].map(([src,alt]) => <div key={src} className="overflow-hidden"><Image src={`/media/${src}`} alt={alt} width={720} height={960} className="aspect-[3/4] w-full object-cover transition duration-700 hover:scale-105" /></div>)}
+              ["photo_2026-10-20_08-36-09.jpg","Carefully made craftsmanship","01"],
+              ["photo_2026-10-20_08-36-19.jpg","Attention to small details","02"],
+              ["photo_2026-10-20_08-36-24.jpg","Every piece has a story","03"],
+              ["photo_2026-10-20_08-36-28.jpg","Precision and patience","04"],
+              ["photo_2026-10-20_08-36-32.jpg","Made by skilled hands","05"],
+              ["photo_2026-10-20_08-36-35.jpg","Crafted one detail at a time","06"]
+            ].map(([src,alt,no]) => (
+              <article key={src} className="group relative overflow-hidden bg-white/5">
+                <Image src={`/media/${src}`} alt={alt} width={720} height={960} className="aspect-[4/5] w-full object-cover transition duration-700 group-hover:scale-105" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/65 via-black/0 to-black/0 opacity-80 transition-opacity duration-500 group-hover:opacity-100" />
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 p-4 text-white md:p-5">
+                  <span className="max-w-[14rem] text-xs uppercase leading-5 tracking-[0.12em]">{alt}</span>
+                  <span className="text-[10px] tracking-[0.2em] text-white/70">{no}</span>
+                </div>
+              </article>
+            ))}
           </div>
         </div>
       </section>
